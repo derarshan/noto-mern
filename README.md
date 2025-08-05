@@ -47,7 +47,7 @@ npm install
 npm run dev
 ```
 
-## 🧪 💻 Run the Frontend
+## 💻 Run the Frontend
 ```bash
 cd frontend
 npm install
