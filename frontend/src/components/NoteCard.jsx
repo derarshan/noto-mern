@@ -11,7 +11,12 @@ const NoteCard = ({ note, setNotes }) => {
     if(!window.confirm("You sure you want to delete this note?")) return;
 
     try {
-      await api.delete(`http://localhost:3000/api/notes/${id}`);
+      const token = await getToken():
+      await api.delete(`/notes/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       setNotes((prev) => prev.filter(note => note._id !== id))
       toast.success("Note deleted successfully");
     } catch (error) {
