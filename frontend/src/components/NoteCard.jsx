@@ -11,7 +11,7 @@ const NoteCard = ({ note, setNotes }) => {
     if(!window.confirm("You sure you want to delete this note?")) return;
 
     try {
-      const token = await getToken():
+      const token = await getToken();
       await api.delete(`/notes/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
