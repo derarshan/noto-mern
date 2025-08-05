@@ -2,13 +2,13 @@
 
 Live App: [https://noto-mern.onrender.com](https://noto-mern.onrender.com)
 
-NOTO is a minimalist, full-stack notes app that lets you create, update, and delete tasks with ease. Built using the MERN stack, it offers a smooth, responsive experience for managing your daily to-dos.
+NOTO is a minimalist, full-stack notes app that lets you create, update, and delete notes with ease. Built using the MERN stack, it offers a smooth, responsive experience for managing your daily to-dos.
 
 ## Features
 
-- ✅ Create and manage tasks in real-time  
-- ✏️ Edit task titles  
-- ❌ Delete tasks  
+- ✅ Create and manage notes in real-time  
+- ✏️ Edit note titles  
+- ❌ Delete notes  
 - 📦 Persistent storage using MongoDB  
 - 🔐 Authentication layer (custom implementation planned)  
 - 📱 Fully responsive design  
