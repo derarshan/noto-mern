@@ -1,3 +1,4 @@
+import { useAuth } from '@clerk/clerk-react';
 import { PenSquare, Trash2Icon, X } from 'lucide-react'
 import { Link } from 'react-router'
 import { formatDate } from '../lib/utils'
@@ -7,6 +8,7 @@ import api from '../lib/axios';
 const NoteCard = ({ note, setNotes }) => {  
   const handleDelete = async (e, id) => {
     e.preventDefault();
+    const { getToken } = useAuth();
     
     if(!window.confirm("You sure you want to delete this note?")) return;
 
