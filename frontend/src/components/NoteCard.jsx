@@ -6,9 +6,9 @@ import toast from 'react-hot-toast';
 import api from '../lib/axios';
 
 const NoteCard = ({ note, setNotes }) => {  
+  const { getToken } = useAuth();
   const handleDelete = async (e, id) => {
     e.preventDefault();
-    const { getToken } = useAuth();
     
     if(!window.confirm("You sure you want to delete this note?")) return;
 
