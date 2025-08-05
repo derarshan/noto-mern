@@ -1,9 +1,9 @@
 import { useAuth } from '@clerk/clerk-react';
-import axios from 'axios';
 import { ArrowLeftIcon, Trash2Icon } from 'lucide-react';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { Link, useNavigate, useParams } from 'react-router';
+import api from '../lib/axios';
 
 const NoteDetailedPage = () => {
   const [note, setNote] = useState(null);
@@ -17,7 +17,7 @@ const NoteDetailedPage = () => {
     const fetchNote = async () => {
       try {
         const token = await getToken();
-        const res = await axios.get(`http://localhost:3000/api/notes/${id}`, {
+        const res = await api.get(`/notes/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -38,7 +38,7 @@ const NoteDetailedPage = () => {
 
     try {
       const token = await getToken();
-      await axios.delete(`http://localhost:3000/api/notes/${id}`, {
+      await api.delete(`/notes/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -64,7 +64,7 @@ const NoteDetailedPage = () => {
     setSaving(true)
     try {
       const token = await getToken();
-      await axios.put(`http://localhost:3000/api/notes/${id}`, note, {
+      await api.put(`/notes/${id}`, note, {
         headers: {
           Authorization: `Bearer ${token}`
         }
